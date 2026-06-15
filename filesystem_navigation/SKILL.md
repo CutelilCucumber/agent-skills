@@ -47,15 +47,15 @@ Do NOT use for:
 1. Check current directory:
 ```bash
 pwd
-
+```
 2. Validate path existence:
 ```bash
 test -e <path> && echo "exists"
-
+```
 3. Inspect target metadata:
 ```bash
 ls -la <path>
-
+```
 ## Output Rule
 
 Return only:
@@ -98,21 +98,21 @@ executing file operations
 1. Identify project type:
 ```bash
 find . -maxdepth 2
-
+```
 2. Locate entry points:
 ```bash
 find . -name "main.*"
 find . -name "app.*"
 find . -name "index.*"
-
+```
 3. Search for logic:
 ```bash
 rg "<symbol>"
-
+```
 4. Inspect file contents:
 ```bash
 cat <file>
-
+```
 ## Output Rule
 
 Return:
@@ -166,22 +166,23 @@ If not satisfied → STOP.
 1. Inspect file:
 ```bash
 cat <file>
-
+```
 2. Apply minimal modification.
 
 3. Verify result:
 ```bash
 git diff
-
+```
 or
 ```bash
 cat <file>
+```
 4. Run project validation if applicable:
 ```bash
 npm test
 pytest
 npm run build
-
+```
 ## Output Rule
 
 Return:
