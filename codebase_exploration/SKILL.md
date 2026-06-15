@@ -16,6 +16,7 @@ Determining where code should be modified
 
 ## Procedure
 
+0. Perform skill: workspace-reality-check
 1. Identify project type:
   find . -maxdepth 2 -name "package.json"
   find . -maxdepth 2 -name "requirements.txt"
