@@ -1,120 +1,42 @@
-Skill: codebase_exploration
-Use Case
+---
+name: codebase-exploration
+description: Build an understanding of a codebase before making changes.
+version: 1.0.0
+category: filesystem
+tags: [codebase, architecture, exploration, dependencies, search, debugging, context]
+---
 
-Use this skill whenever a task requires:
+## When to Use
 
-Understanding an unfamiliar project
-Finding where functionality lives
-Tracing APIs, routes, services, or components
-Locating configuration files
-Building context before making changes
+Working in an unfamiliar project
+Tracing functionality
+Locating routes, controllers, services, or components
+Finding where a bug originates
+Determining where code should be modified
 
-Use this skill before editing code.
+## Procedure
 
-How
-Principle
+1. Identify project type:
+  find . -maxdepth 2 -name "package.json"
+  find . -maxdepth 2 -name "requirements.txt"
+  find . -maxdepth 2 -name "pyproject.toml"
+2. Identify entry points:
+  find . -name "main.py"
+  find . -name "app.py"
+  find . -name "index.*"
+  find . -name "server.*"
+3. Search for relevant symbols:
+  rg "<symbol>"
+4. Trace imports, dependencies, and call flow.
+5. Read surrounding files before editing.
+6. Form a mental model of:
+  Entry points
+  Data flow
+  Dependencies
+  Components involved
 
-Understand before modifying.
-
-Build a mental model of the codebase before taking action.
-
-Step 0: use the Skill: workspace_reality_check
-
-Step 1: Identify Project Type
-
-Look for:
-
-find . -maxdepth 2 -name "package.json"
-find . -maxdepth 2 -name "requirements.txt"
-find . -maxdepth 2 -name "pyproject.toml"
-find . -maxdepth 2 -name "Cargo.toml"
-find . -maxdepth 2 -name "go.mod"
-
-Determine:
-
-Language
-Framework
-Build system
-Step 2: Locate Entry Points
-
-Examples:
-
-Node:
-
-cat package.json
-
-Python:
-
-find . -name "main.py"
-find . -name "app.py"
-
-Framework-specific:
-
-find . -name "server.*"
-find . -name "index.*"
-Step 3: Build a Context Map
-
-Identify:
-
-Routes
-Controllers
-Services
-Database layer
-Configuration
-Shared utilities
-
-Search:
-
-grep -R "target_function" .
-
-or
-
-rg "target_function"
-Step 4: Trace Dependencies
-
-Determine:
-
-What imports the target file
-What the target imports
-What side effects may occur
-Step 5: Read Before Editing
-
-Inspect:
-
-Target file
-Neighboring files
-Configuration files
-Relevant tests
-
-Do not edit based on filename assumptions alone.
-
-Step 6: Create a Working Theory
-
-Before changes, identify:
-
-What component owns the behavior
-What files will likely be affected
-How changes propagate through the system
-Rules
+## Rules
 Read before modifying.
 Understand call flow before editing.
 Verify assumptions through code inspection.
-Prefer search results over intuition.
-Never treat a file name as proof of responsibility.
-Success Criteria
-Project type identified.
-Entry points located.
-Relevant components mapped.
-Dependencies understood.
-Modification targets confirmed.
-Tags
-
-codebase
-exploration
-analysis
-context
-architecture
-investigation
-routes
-dependencies
-search
+Search the codebase instead of guessing locations.
