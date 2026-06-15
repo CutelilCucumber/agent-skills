@@ -16,7 +16,6 @@ Generating project artifacts
 
 ## Procedure
 
-0. Perform skill: workspace-reality-check
 1. Verify target path:
   ls -la <path>
 2. Read existing content before modification.

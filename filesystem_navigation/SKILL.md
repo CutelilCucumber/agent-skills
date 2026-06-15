@@ -14,8 +14,8 @@ Determining where code lives
 Resolving relative paths
 Verifying a target location before reading or writing
 
-## Procedure
-0. Perform skill: workspace-reality-check
+## Procedure 
+
 1. Determine the current workspace:
   pwd
 2. Map the directory structure:
